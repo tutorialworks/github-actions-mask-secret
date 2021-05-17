@@ -24,11 +24,11 @@ jobs:
     steps:
       - name: Add mask
         run: |
-          echo "::add-mask::${{ secrets.CLUSTER_URL }}" 
+          echo "::add-mask::${{ secrets.SECRET_URL }}" 
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
       - name: Try to write the secret 
-        run: echo ${{ secrets.CLUSTER_URL }}
+        run: echo ${{ secrets.SECRET_URL }}
